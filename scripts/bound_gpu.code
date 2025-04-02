@@ -1,0 +1,8 @@
+#ifdef Y
+boundary_ymin[0] = boundary_ymin_0_gpu;
+boundary_ymax[0] = boundary_ymax_0_gpu;
+#endif
+#ifdef Z
+boundary_zmin[0] = boundary_zmin_0_gpu;
+boundary_zmax[0] = boundary_zmax_0_gpu;
+#endif

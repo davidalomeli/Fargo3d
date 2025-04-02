@@ -1,0 +1,15 @@
+#Boundaries file for fluid number 0
+#----------------------------------
+
+Density:
+	Ymin: EXTRAPOLATELEFT
+	Ymax: EXTRAPOLATELEFT
+
+Vx:
+	Ymin: KEPLERIAN2DVAZIM
+	Ymax: KEPLERIAN2DVAZIM
+
+Vy:
+	Ymin: ANTISYMMETRIC
+	Ymax: ANTISYMMETRIC
+

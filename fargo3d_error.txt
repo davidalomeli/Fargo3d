@@ -1,0 +1,7 @@
+rm: cannot remove '../scripts/bound_*.code': No such file or directory
+make[1]: [../src/makefile:612: clean] Error 1 (ignored)
+rm: cannot remove '../bin/*': No such file or directory
+make[1]: [../src/makefile:613: clean] Error 1 (ignored)
+Reading parameters file setups/fargo_multifluid/fargo_multifluid.par
+mpirun: Forwarding signal 18 to job
+slurmstepd-cnode064: error: *** JOB 108817 ON cnode064 CANCELLED AT 2025-03-04T15:23:30 ***

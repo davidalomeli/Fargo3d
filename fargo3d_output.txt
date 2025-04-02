@@ -1,0 +1,214 @@
+ 
+:: initializing oneAPI environment ...
+   slurm_script: BASH_VERSION = 5.1.8(1)-release
+   args: Using "$@" for setvars.sh arguments: -ofi_internal=1 --force
+:: advisor -- latest
+:: ccl -- latest
+:: compiler -- latest
+:: dal -- latest
+:: debugger -- latest
+:: dev-utilities -- latest
+:: dnnl -- latest
+:: dpcpp-ct -- latest
+:: dpl -- latest
+:: inspector -- latest
+:: ipp -- latest
+:: ippcp -- latest
+:: itac -- latest
+:: mkl -- latest
+:: mpi -- latest
+:: tbb -- latest
+:: vtune -- latest
+:: oneAPI environment initialized ::
+ 
+
+Everything has been cleaned
+
+make[1]: Entering directory '/gpfs/home/dlomeli/fargo3d_env/new_dir/fargo3d/bin'
+
+Everything has been cleaned
+
+make[1]: Leaving directory '/gpfs/home/dlomeli/fargo3d_env/new_dir/fargo3d/bin'
+make[1]: Entering directory '/gpfs/home/dlomeli/fargo3d_env/new_dir/fargo3d/bin'
+
+Generating rescale.c file
+Warning ! Scaling rule not found for ASPECTRATIO. Is it dimensionless ?
+Warning ! Scaling rule not found for SIGMASLOPE. Is it dimensionless ?
+Warning ! Scaling rule not found for FLARINGINDEX. Is it dimensionless ?
+Warning ! Scaling rule not found for INVSTOKES1. Is it dimensionless ?
+Warning ! Scaling rule not found for INVSTOKES2. Is it dimensionless ?
+Warning ! Scaling rule not found for INVSTOKES3. Is it dimensionless ?
+Warning ! Scaling rule not found for EPSILON. Is it dimensionless ?
+Warning ! Scaling rule not found for THICKNESSSMOOTHING. Is it dimensionless ?
+Warning ! Scaling rule not found for ECCENTRICITY. Is it dimensionless ?
+make[1]: Leaving directory '/gpfs/home/dlomeli/fargo3d_env/new_dir/fargo3d/bin'
+make[1]: Entering directory '/gpfs/home/dlomeli/fargo3d_env/new_dir/fargo3d/bin'
+Generating bound_code files...
+Generating bound_code files...
+Generating bound_code files...
+CC ../src/LowTasks.c ==> LowTasks.o
+CC ../src/psys.c ==> psys.o
+CC ../src/main.c ==> main.o
+CC ../src/param.c ==> param.o
+CC ../src/usage.c ==> usage.o
+CC var.c ==> var.o
+PARSING BOUNDARIES...
+Note: This process can be suppressed by declaring HARDBOUNDARIES in the .opt file.
+Warning: Z boundaries are not defined.
+CC ../src/split.c ==> split.o
+CC ../src/comm.c ==> comm.o
+CC ../src/CompPresIso.c ==> CompPresIso.o
+CC ../src/CompPresPoly.c ==> CompPresPoly.o
+CC ../src/boundary.c ==> boundary.o
+CC ../src/checknans.c ==> checknans.o
+CC ../src/vanleer_x_a.c ==> vanleer_x_a.o
+CC ../src/vanleer_x_b.c ==> vanleer_x_b.o
+CC ../src/vanleer_y_a.c ==> vanleer_y_a.o
+CC ../src/vanleer_y_b.c ==> vanleer_y_b.o
+CC ../src/vanleer_z_a.c ==> vanleer_z_a.o
+CC ../src/vanleer_z_b.c ==> vanleer_z_b.o
+CC ../src/divrho.c ==> divrho.o
+CC ../src/transport.c ==> transport.o
+CC ../src/substep3.c ==> substep3.o
+CC ../src/CompPresAd.c ==> CompPresAd.o
+CC ../src/substep2_a.c ==> substep2_a.o
+CC ../src/substep2_b.c ==> substep2_b.o
+CC ../setups/fargo_multifluid/condinit.c ==> condinit.o
+CC ../src/output.c ==> output.o
+CC ../src/output2d.c ==> output2d.o
+CC ../src/output_vtk.c ==> output_vtk.o
+CC ../src/output_vtk_merging.c ==> output_vtk_merging.o
+CC ../src/algogas.c ==> algogas.o
+CC ../src/planets.c ==> planets.o
+CC ../src/runge_kutta.c ==> runge_kutta.o
+CC ../src/stockholm.c ==> stockholm.o
+CC ../src/mhd.c ==> mhd.o
+CC ../src/potential.c ==> potential.o
+CC ../src/timeinfo.c ==> timeinfo.o
+CC ../src/allocate.c ==> allocate.o
+CC ../src/defout.c ==> defout.o
+CC ../src/fresh.c ==> fresh.o
+CC ../src/light_global_dev.c ==> light_global_dev.o
+CC ../src/fargo_mhd.c ==> fargo_mhd.o
+CC ../src/substep1_x.c ==> substep1_x.o
+CC ../src/substep1_y.c ==> substep1_y.o
+CC ../src/substep1_z.c ==> substep1_z.o
+CC ../src/compfields.c ==> compfields.o
+CC ../src/advect_shift.c ==> advect_shift.o
+CC ../src/rescale.c ==> rescale.o
+CC ../src/momenta_x.c ==> momenta_x.o
+CC ../src/momenta_y.c ==> momenta_y.o
+CC ../src/momenta_z.c ==> momenta_z.o
+CC ../src/reduction_sum.c ==> reduction_sum.o
+CC ../src/reduction_min.c ==> reduction_min.o
+CC ../src/update_x.c ==> update_x.o
+CC ../src/update_y.c ==> update_y.o
+CC ../src/update_z.c ==> update_z.o
+CC ../src/update_density_x.c ==> update_density_x.o
+CC ../src/update_density_y.c ==> update_density_y.o
+CC ../src/update_density_z.c ==> update_density_z.o
+CC ../src/newvel_x.c ==> newvel_x.o
+CC ../src/newvel_y.c ==> newvel_y.o
+CC ../src/newvel_z.c ==> newvel_z.o
+CC ../src/compute_residual.c ==> compute_residual.o
+CC ../src/change_frame.c ==> change_frame.o
+CC ../src/compute_vmed.c ==> compute_vmed.o
+CC ../src/correct_vtheta.c ==> correct_vtheta.o
+CC ../src/cfl.c ==> cfl.o
+CC ../src/cfl_b.c ==> cfl_b.o
+CC ../src/compute_force.c ==> compute_force.o
+CC ../src/compute_slopes.c ==> compute_slopes.o
+CC ../src/compute_star.c ==> compute_star.o
+CC ../src/compute_emf.c ==> compute_emf.o
+CC ../src/update_magnetic.c ==> update_magnetic.o
+CC ../src/lorentz_force.c ==> lorentz_force.o
+CC ../src/fargo_ppa_a.c ==> fargo_ppa_a.o
+CC ../src/fargo_ppa_b.c ==> fargo_ppa_b.o
+CC ../src/fargo_ppa_c.c ==> fargo_ppa_c.o
+CC ../src/fargo_ppa_d_2d.c ==> fargo_ppa_d_2d.o
+CC ../src/fargo_ppa_d.c ==> fargo_ppa_d.o
+CC ../src/fargo_ppa_steep.c ==> fargo_ppa_steep.o
+CC ../src/vanleerx_ppa.c ==> vanleerx_ppa.o
+CC ../src/dh_boundary.c ==> dh_boundary.o
+CC ../src/cpvel.c ==> cpvel.o
+CC ../src/integrate_emf.c ==> integrate_emf.o
+CC ../src/monitor.c ==> monitor.o
+CC ../src/viscosity.c ==> viscosity.o
+CC ../src/init_stockholm.c ==> init_stockholm.o
+CC ../src/visctensor_cart.c ==> visctensor_cart.o
+CC ../src/addviscosity_cart.c ==> addviscosity_cart.o
+CC ../src/addviscosity_cyl.c ==> addviscosity_cyl.o
+CC ../src/addviscosity_sph.c ==> addviscosity_sph.o
+CC ../src/visctensor_sph.c ==> visctensor_sph.o
+CC ../src/visctensor_cyl.c ==> visctensor_cyl.o
+CC ../src/stretch.c ==> stretch.o
+CC ../src/mon_momx.c ==> mon_momx.o
+CC ../src/mon_dens.c ==> mon_dens.o
+CC ../src/mon_momy.c ==> mon_momy.o
+CC ../src/mon_momz.c ==> mon_momz.o
+CC ../src/mon_torque.c ==> mon_torque.o
+CC ../src/comm_device.c ==> comm_device.o
+CC ../src/checkmute_y.c ==> checkmute_y.o
+CC ../src/checkmute_z.c ==> checkmute_z.o
+CC ../src/mon_reynolds.c ==> mon_reynolds.o
+CC ../src/mon_maxwell.c ==> mon_maxwell.o
+CC ../src/mon_bxflux.c ==> mon_bxflux.o
+CC ../src/postrestarthook.c ==> postrestarthook.o
+CC ../src/change_arch.c ==> change_arch.o
+CC ../src/select_device.c ==> select_device.o
+CC ../src/redefoptions.c ==> redefoptions.o
+CC ../src/setuphook1.c ==> setuphook1.o
+CC ../src/fill_ghostsx.c ==> fill_ghostsx.o
+CC ../src/cfl_fluids_min.c ==> cfl_fluids_min.o
+CC ../src/colrate.c ==> colrate.o
+CC ../src/collisions.c ==> collisions.o
+CC ../src/resetfield.c ==> resetfield.o
+CC ../src/totaldens.c ==> totaldens.o
+CC ../src/floor.c ==> floor.o
+CC ../src/ShearingPeriodicBC.c ==> ShearingPeriodicBC.o
+CC ../src/summary.c ==> summary.o
+CC ../src/dust_diffusion_main.c ==> dust_diffusion_main.o
+CC ../src/dust_diffusion_core.c ==> dust_diffusion_core.o
+CC ../src/dust_diffusion_coefficients.c ==> dust_diffusion_coefficients.o
+CC ../src/copy_field.c ==> copy_field.o
+CC ../src/nimhd_hall_effect.c ==> nimhd_hall_effect.o
+CC ../src/nimhd_hall_effect_emfx.c ==> nimhd_hall_effect_emfx.o
+CC ../src/nimhd_hall_effect_emfy.c ==> nimhd_hall_effect_emfy.o
+CC ../src/nimhd_hall_effect_emfz.c ==> nimhd_hall_effect_emfz.o
+CC ../src/nimhd_hall_effect_updateB.c ==> nimhd_hall_effect_updateB.o
+CC ../src/nimhd_hall_effect_update_emfs.c ==> nimhd_hall_effect_update_emfs.o
+CC ../src/nimhd_hall_effect_coeff.c ==> nimhd_hall_effect_coeff.o
+CC ../src/nimhd_ambipolar_diffusion.c ==> nimhd_ambipolar_diffusion.o
+CC ../src/nimhd_ambipolar_diffusion_emfx.c ==> nimhd_ambipolar_diffusion_emfx.o
+CC ../src/nimhd_ambipolar_diffusion_emfy.c ==> nimhd_ambipolar_diffusion_emfy.o
+CC ../src/nimhd_ambipolar_diffusion_emfz.c ==> nimhd_ambipolar_diffusion_emfz.o
+CC ../src/nimhd_ambipolar_diffusion_coeff.c ==> nimhd_ambipolar_diffusion_coeff.o
+CC ../src/nimhd_ohmic_diffusion.c ==> nimhd_ohmic_diffusion.o
+CC ../src/nimhd_ohmic_diffusion_coeff.c ==> nimhd_ohmic_diffusion_coeff.o
+CC ../src/compute_jx.c ==> compute_jx.o
+CC ../src/compute_jy.c ==> compute_jy.o
+CC ../src/compute_jz.c ==> compute_jz.o
+CC ../src/mesh.c ==> mesh.o
+CC ../src/ram_advect.c ==> ram_advect.o
+CC ../src/ram_advect_lin.c ==> ram_advect_lin.o
+CC ../src/ram_compute_ustar.c ==> ram_compute_ustar.o
+CC ../src/ram_plm.c ==> ram_plm.o
+CC ymin_bound_0.c ==> ymin_bound_0.o
+CC ymax_bound_0.c ==> ymax_bound_0.o
+
+All objects are OK. Linking stage
+
+          FARGO3D SUMMARY:           
+          ===============            
+
+This built is PARALLEL (MPI). Use "make seq" to change that
+
+
+SETUP:      'fargo_multifluid'         
+(Use "make SETUP=[valid_setup_string]" to change set up)
+(Use "make list" to see the list of setups implemented)
+(Use "make info" to see the current sticky build options)
+
+rm ymin_bound_0.c
+make[1]: Leaving directory '/gpfs/home/dlomeli/fargo3d_env/new_dir/fargo3d/bin'
+Skipping --

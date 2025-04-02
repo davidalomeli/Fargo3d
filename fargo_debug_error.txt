@@ -1,0 +1,11 @@
+
+       !!!! WARNING !!!!
+
+This is a sequential built of the ./fargo3d code
+If you planned to run the MPI-parallel version,
+then you MUST rebuild the executable. In this case,
+ issue:
+make PARALLEL=1 (or make para)
+
+Any subsequent invocation of make will build an MPI version.
+Reading parameters file setups/fargo_multifluid/fargo_multifluid.par

@@ -1,0 +1,150 @@
+Reading parameters file setups/fargo_multifluid/fargo_multifluid.par
+munmap_chunk(): invalid pointer
+[cnode064:4153912] *** Process received signal ***
+[cnode064:4153912] Signal: Aborted (6)
+[cnode064:4153912] Signal code:  (-6)
+munmap_chunk(): invalid pointer
+[cnode064:4153921] *** Process received signal ***
+[cnode064:4153921] Signal: Aborted (6)
+[cnode064:4153921] Signal code:  (-6)
+munmap_chunk(): invalid pointer
+[cnode064:4153914] *** Process received signal ***
+[cnode064:4153914] Signal: Aborted (6)
+[cnode064:4153914] Signal code:  (-6)
+[cnode064:4153914] [ 0] /lib64/libc.so.6(+0x54df0)[0x1485ce254df0]
+[cnode064:4153914] [ 1] /lib64/libc.so.6(+0xa154c)[0x1485ce2a154c]
+[cnode064:4153914] [ 2] /lib64/libc.so.6(raise+0x16)[0x1485ce254d46]
+[cnode064:4153914] [ 3] /lib64/libc.so.6(abort+0xd3)[0x1485ce2287f3]
+[cnode064:4153914] [ 4] /lib64/libc.so.6(+0x29130)[0x1485ce229130]
+[cnode064:4153914] [ 5] /lib64/libc.so.6(+0xab617)[0x1485ce2ab617]
+[cnode064:4153914] [ 6] [cnode064:4153912] [ 0] /lib64/libc.so.6(+0x54df0)[0x14c129c54df0]
+[cnode064:4153912] [ 1] /lib64/libc.so.6(+0xa154c)[0x14c129ca154c]
+[cnode064:4153912] [ 2] /lib64/libc.so.6(raise+0x16)[0x14c129c54d46]
+[cnode064:4153912] [ 3] /lib64/libc.so.6(abort+0xd3)[0x14c129c287f3]
+[cnode064:4153912] [ 4] /lib64/libc.so.6(+0x29130)[0x14c129c29130]
+[cnode064:4153912] [ 5] /lib64/libc.so.6(+0xab617)[0x14c129cab617]
+[cnode064:4153912] [ 6] /lib64/libc.so.6(+0xab8ac)[0x14c129cab8ac]
+[cnode064:4153912] [ 7] /lib64/libc.so.6(free+0x9a)[0x14c129caf99a]
+[cnode064:4153912] [ 8] /opt/ohpc/admin/pmix/lib/libpmix.so.2(+0x161805)[0x14c12953a805]
+[cnode064:4153912] [ 9] /opt/ohpc/admin/pmix/lib/libpmix.so.2(pmix_ptl_base_send_handler+0x2e9)[0x14c12953fe29]
+[cnode064:4153912] [10] /lib64/libevent_core-2.1.so.7(+0x21b88)[0x14c129a1cb88]
+[cnode064:4153912] [11] /lib64/libevent_core-2.1.so.7(event_base_loop+0x577)[0x14c129a1e7a7]
+[cnode064:4153912] [12] /opt/ohpc/admin/pmix/lib/libpmix.so.2(+0xabde9)[0x14c129484de9]
+[cnode064:4153912] [13] /lib64/libc.so.6(+0x9f802)[0x14c129c9f802]
+[cnode064:4153912] [14] /lib64/libc.so.6(+0x3f450)[0x14c129c3f450]
+[cnode064:4153912] *** End of error message ***
+[cnode064:4153921] [ 0] /lib64/libc.so.6(+0x54df0)[0x15358ae54df0]
+[cnode064:4153921] [ 1] /lib64/libc.so.6(+0xa154c)[0x15358aea154c]
+[cnode064:4153921] [ 2] /lib64/libc.so.6(raise+0x16)[0x15358ae54d46]
+[cnode064:4153921] [ 3] /lib64/libc.so.6(abort+0xd3)[0x15358ae287f3]
+[cnode064:4153921] [ 4] /lib64/libc.so.6(+0x29130)[0x15358ae29130]
+[cnode064:4153921] [ 5] /lib64/libc.so.6(+0xab617)[0x15358aeab617]
+[cnode064:4153921] [ 6] /lib64/libc.so.6(+0xab8ac)[0x15358aeab8ac]
+[cnode064:4153921] [ 7] /lib64/libc.so.6(free+0x9a)[0x15358aeaf99a]
+[cnode064:4153921] [ 8] /opt/ohpc/admin/pmix/lib/libpmix.so.2(+0x161805)[0x15358a829805]
+[cnode064:4153921] [ 9] /opt/ohpc/admin/pmix/lib/libpmix.so.2(pmix_ptl_base_send_handler+0x2e9)[0x15358a82ee29]
+[cnode064:4153921] [10] /lib64/libevent_core-2.1.so.7(+0x21b88)[0x15358acd9b88]
+[cnode064:4153921] [11] /lib64/libevent_core-2.1.so.7(event_base_loop+0x577)[0x15358acdb7a7]
+[cnode064:4153921] [12] /opt/ohpc/admin/pmix/lib/libpmix.so.2(+0xabde9)[0x15358a773de9]
+[cnode064:4153921] [13] /lib64/libc.so.6(+0x9f802)[0x15358ae9f802]
+[cnode064:4153921] [14] /lib64/libc.so.6(+0x3f450)[0x15358ae3f450]
+[cnode064:4153921] *** End of error message ***
+/lib64/libc.so.6(+0xab8ac)[0x1485ce2ab8ac]
+[cnode064:4153914] [ 7] /lib64/libc.so.6(free+0x9a)[0x1485ce2af99a]
+[cnode064:4153914] [ 8] /opt/ohpc/admin/pmix/lib/libpmix.so.2(+0x161805)[0x1485cdbb0805]
+[cnode064:4153914] [ 9] /opt/ohpc/admin/pmix/lib/libpmix.so.2(pmix_ptl_base_send_handler+0x2e9)[0x1485cdbb5e29]
+[cnode064:4153914] [10] /lib64/libevent_core-2.1.so.7(+0x21b88)[0x1485ce077b88]
+[cnode064:4153914] [11] /lib64/libevent_core-2.1.so.7(event_base_loop+0x577)[0x1485ce0797a7]
+[cnode064:4153914] [12] /opt/ohpc/admin/pmix/lib/libpmix.so.2(+0xabde9)[0x1485cdafade9]
+[cnode064:4153914] [13] /lib64/libc.so.6(+0x9f802)[0x1485ce29f802]
+[cnode064:4153914] [14] /lib64/libc.so.6(+0x3f450)[0x1485ce23f450]
+[cnode064:4153914] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 3 with PID 4153914 on node cnode064 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+munmap_chunk(): invalid pointer
+[cnode064:4162120] *** Process received signal ***
+[cnode064:4162120] Signal: Aborted (6)
+[cnode064:4162120] Signal code:  (-6)
+munmap_chunk(): invalid pointer
+[cnode064:4162114] *** Process received signal ***
+[cnode064:4162114] Signal: Aborted (6)
+[cnode064:4162114] Signal code:  (-6)
+[cnode064:4162114] [ 0] /lib64/libc.so.6(+0x54df0)[0x1535ca854df0]
+[cnode064:4162114] [ 1] /lib64/libc.so.6(+0xa154c)[0x1535ca8a154c]
+[cnode064:4162114] [ 2] [cnode064:4162120] [ 0] /lib64/libc.so.6(+0x54df0)[0x15273e254df0]
+[cnode064:4162120] [ 1] /lib64/libc.so.6(+0xa154c)[0x15273e2a154c]
+[cnode064:4162120] [ 2] /lib64/libc.so.6(raise+0x16)[0x15273e254d46]
+[cnode064:4162120] [ 3] /lib64/libc.so.6(abort+0xd3)[0x15273e2287f3]
+[cnode064:4162120] [ 4] /lib64/libc.so.6(raise+0x16)[0x1535ca854d46]
+[cnode064:4162114] [ 3] /lib64/libc.so.6(abort+0xd3)[0x1535ca8287f3]
+[cnode064:4162114] [ 4] /lib64/libc.so.6(+0x29130)[0x15273e229130]
+[cnode064:4162120] [ 5] /lib64/libc.so.6(+0x29130)[0x1535ca829130]
+[cnode064:4162114] [ 5] /lib64/libc.so.6(+0xab617)[0x15273e2ab617]
+[cnode064:4162120] [ 6] /lib64/libc.so.6(+0xab617)[0x1535ca8ab617]
+[cnode064:4162114] [ 6] /lib64/libc.so.6(+0xab8ac)[0x15273e2ab8ac]
+[cnode064:4162120] [ 7] /lib64/libc.so.6(+0xab8ac)[0x1535ca8ab8ac]
+[cnode064:4162114] [ 7] /lib64/libc.so.6(free+0x9a)[0x15273e2af99a]
+[cnode064:4162120] [ 8] /lib64/libc.so.6(free+0x9a)[0x1535ca8af99a]
+[cnode064:4162114] [ 8] /opt/ohpc/admin/pmix/lib/libpmix.so.2(+0x161805)[0x15273dcfd805]
+[cnode064:4162120] [ 9] /opt/ohpc/admin/pmix/lib/libpmix.so.2(pmix_ptl_base_send_handler+0x2e9)[0x15273dd02e29]
+[cnode064:4162120] [10] /opt/ohpc/admin/pmix/lib/libpmix.so.2(+0x161805)[0x1535ca296805]
+[cnode064:4162114] [ 9] /opt/ohpc/admin/pmix/lib/libpmix.so.2(pmix_ptl_base_send_handler+0x2e9)[0x1535ca29be29]
+[cnode064:4162114] [10] /lib64/libevent_core-2.1.so.7(+0x21b88)[0x15273e42db88]
+[cnode064:4162120] [11] /lib64/libevent_core-2.1.so.7(event_base_loop+0x577)[0x15273e42f7a7]
+[cnode064:4162120] [12] /lib64/libevent_core-2.1.so.7(+0x21b88)[0x1535ca734b88]
+[cnode064:4162114] [11] /lib64/libevent_core-2.1.so.7(event_base_loop+0x577)[0x1535ca7367a7]
+[cnode064:4162114] [12] /opt/ohpc/admin/pmix/lib/libpmix.so.2(+0xabde9)[0x15273dc47de9]
+[cnode064:4162120] [13] /opt/ohpc/admin/pmix/lib/libpmix.so.2(+0xabde9)[0x1535ca1e0de9]
+[cnode064:4162114] [13] /lib64/libc.so.6(+0x9f802)[0x15273e29f802]
+[cnode064:4162120] [14] /lib64/libc.so.6(+0x9f802)[0x1535ca89f802]
+[cnode064:4162114] [14] /lib64/libc.so.6(+0x3f450)[0x15273e23f450]
+[cnode064:4162120] *** End of error message ***
+/lib64/libc.so.6(+0x3f450)[0x1535ca83f450]
+[cnode064:4162114] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 1 with PID 4162114 on node cnode064 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+corrupted size vs. prev_size
+[cnode066:392199] *** Process received signal ***
+[cnode066:392199] Signal: Aborted (6)
+[cnode066:392199] Signal code:  (-6)
+[cnode066:392199] [ 0] /lib64/libc.so.6(+0x54df0)[0x145d39c54df0]
+[cnode066:392199] [ 1] /lib64/libc.so.6(+0xa154c)[0x145d39ca154c]
+[cnode066:392199] [ 2] /lib64/libc.so.6(raise+0x16)[0x145d39c54d46]
+[cnode066:392199] [ 3] /lib64/libc.so.6(abort+0xd3)[0x145d39c287f3]
+[cnode066:392199] [ 4] /lib64/libc.so.6(+0x29130)[0x145d39c29130]
+[cnode066:392199] [ 5] /lib64/libc.so.6(+0xab617)[0x145d39cab617]
+[cnode066:392199] [ 6] /lib64/libc.so.6(+0xac186)[0x145d39cac186]
+[cnode066:392199] [ 7] /lib64/libc.so.6(+0xac310)[0x145d39cac310]
+[cnode066:392199] [ 8] /lib64/libc.so.6(+0xad330)[0x145d39cad330]
+[cnode066:392199] [ 9] /lib64/libc.so.6(free+0x55)[0x145d39caf955]
+[cnode066:392199] [10] /opt/intel/oneapi/mpi/2021.13/opt/mpi/libfabric/lib/prov/libpsm3-fi.so(psm3_ips_scbctrl_fini+0x1a)[0x145d383be93a]
+[cnode066:392199] [11] /opt/intel/oneapi/mpi/2021.13/opt/mpi/libfabric/lib/prov/libpsm3-fi.so(psm3_ips_proto_am_fini+0xd)[0x145d383ae32d]
+[cnode066:392199] [12] /opt/intel/oneapi/mpi/2021.13/opt/mpi/libfabric/lib/prov/libpsm3-fi.so(psm3_ips_proto_fini+0x25)[0x145d383abf75]
+[cnode066:392199] [13] /opt/intel/oneapi/mpi/2021.13/opt/mpi/libfabric/lib/prov/libpsm3-fi.so(+0x11b52d)[0x145d383bf52d]
+[cnode066:392199] [14] /opt/intel/oneapi/mpi/2021.13/opt/mpi/libfabric/lib/prov/libpsm3-fi.so(psm3_ep_close+0x3c3)[0x145d3835d5d3]
+[cnode066:392199] [15] /opt/intel/oneapi/mpi/2021.13/opt/mpi/libfabric/lib/prov/libpsm3-fi.so(psmx3_trx_ctxt_free+0x271)[0x145d38318261]
+[cnode066:392199] [16] /opt/intel/oneapi/mpi/2021.13/opt/mpi/libfabric/lib/prov/libpsm3-fi.so(+0x61228)[0x145d38305228]
+[cnode066:392199] [17] /opt/ohpc/pub/mpi/openmpi4-gnu12/4.1.5/lib/openmpi/mca_mtl_ofi.so(ompi_mtl_ofi_finalize+0x27)[0x145d38014337]
+[cnode066:392199] [18] /opt/ohpc/pub/mpi/openmpi4-gnu12/4.1.5/lib/libmpi.so.40(ompi_mpi_finalize+0x58c)[0x145d39efc35c]
+[cnode066:392199] [19] ./fargo3d[0x402eeb]
+[cnode066:392199] [20] /lib64/libc.so.6(+0x3feb0)[0x145d39c3feb0]
+[cnode066:392199] [21] /lib64/libc.so.6(__libc_start_main+0x80)[0x145d39c3ff60]
+[cnode066:392199] [22] ./fargo3d[0x403465]
+[cnode066:392199] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 39 with PID 392199 on node cnode066 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------

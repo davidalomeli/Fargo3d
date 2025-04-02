@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH --job-name=half_inner
+#SBATCH --output=fargo_1_4_mass_output.txt
+#SBATCH --error=fargo_1_4_mass_error.txt
+#SBATCH -n 20
+#SBATCH --partition=phys-k
+
+module purge
+
+source /home/dlomeli/fargo3d_env/bin/activate
+source /opt/intel/oneapi/setvars.sh -ofi_internal=1 --force
+module load gnu12 openmpi4
+export I_MPI_OFI_PROVIDER=tcp
+make clean
+make PARALLEL=1 SETUP=fargo_multifluid FULLDEBUG=0
+mpirun -np 20 ./fargo3d setups/fargo_multifluid/fargo_multifluid.par > fargo_1_4_mass

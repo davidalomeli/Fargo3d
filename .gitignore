@@ -1,0 +1,10 @@
+outputs/*
+fargo_lowres*
+fargo_highres*
+fargo_1*
+fargo_half*
+fargo_double*
+lowres_test*
+highres_test*
+.git2/*
+.git_backup/*

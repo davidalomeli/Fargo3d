@@ -1,0 +1,5 @@
+make[1]: Entering directory '/gpfs/home/dlomeli/fargo3d_env/new_dir/fargo3d/bin'
+
+Generating var.c file
+You have not defined mandatory variables...
+make[1]: Leaving directory '/gpfs/home/dlomeli/fargo3d_env/new_dir/fargo3d/bin'

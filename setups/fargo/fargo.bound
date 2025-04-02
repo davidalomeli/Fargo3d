@@ -1,0 +1,14 @@
+#Boundaries configuration file for fargo.bound
+#----------------------------------------------
+
+Density:
+	Ymin: SYMMETRIC
+	Ymax: SYMMETRIC
+
+Vx:
+	Ymin: SYMMETRIC
+	Ymax: SYMMETRIC
+
+Vy:
+	Ymin: SYMMETRIC
+	Ymax: SYMMETRIC

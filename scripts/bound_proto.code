@@ -1,0 +1,16 @@
+#ifdef Y
+ex void boundary_ymin_0_cpu(void);
+ex void boundary_ymax_0_cpu(void);
+#endif
+#ifdef Y
+ex void boundary_ymin_0_gpu(void);
+ex void boundary_ymax_0_gpu(void);
+#endif
+#ifdef Z
+ex void boundary_zmin_0_cpu(void);
+ex void boundary_zmax_0_cpu(void);
+#endif
+#ifdef Z
+ex void boundary_zmin_0_gpu(void);
+ex void boundary_zmax_0_gpu(void);
+#endif

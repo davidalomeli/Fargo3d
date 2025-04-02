@@ -1,0 +1,8 @@
+#ifdef Y
+boundary_ymin[0] = boundary_ymin_0_cpu;
+boundary_ymax[0] = boundary_ymax_0_cpu;
+#endif
+#ifdef Z
+boundary_zmin[0] = boundary_zmin_0_cpu;
+boundary_zmax[0] = boundary_zmax_0_cpu;
+#endif
