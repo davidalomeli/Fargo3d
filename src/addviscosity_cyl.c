@@ -29,15 +29,21 @@ void addviscosity_cyl_cpu(real dt) {
   INPUT(Mpz);
   OUTPUT(Vz_temp);
 #endif
+  INPUT(Viscx);
+  INPUT(Viscy);
+  OUTPUT(Viscx);
+  OUTPUT(Viscy);
 //<\USER_DEFINED>
 
 //<EXTERNAL>
   real* rho = Density->field_cpu;
 #ifdef X
-  real* vx = Vx_temp->field_cpu;
+  real* vx    = Vx_temp->field_cpu;
+  real* viscx = Viscx->field_cpu;
 #endif
 #ifdef Y
   real* vy = Vy_temp->field_cpu;
+  real* viscy = Viscy->field_cpu;
 #endif
 #ifdef Z
   real* vz = Vz_temp->field_cpu;
@@ -95,18 +101,21 @@ void addviscosity_cyl_cpu(real dt) {
       for(i=XIM; i<size_x; i++) {
 #endif
 //<#>
-
 #ifdef X
-	vx[l] += 2.0*(tauxx[l]-tauxx[lxm])*Inv_zone_size_xmed(i,j,k)/((rho[l]+rho[lxm]))*dt;
+	viscx[l] = -vx[l];
+	vx[l]  += 2.0*(tauxx[l]-tauxx[lxm])*Inv_zone_size_xmed(i,j,k)/((rho[l]+rho[lxm]))*dt;
+	
 #if defined(Y) && defined(X)
 	vx[l] += 2.0*(ymin(j+1)*ymin(j+1)*tauyx[lyp]-ymin(j)*ymin(j)*tauyx[l])/((ymin(j+1)-ymin(j))*ymed(j)*ymed(j)*(rho[lxm]+rho[l]))*dt;
 #endif
 #if defined(X) && defined(Z)
 	vx[l] += 2.0*(tauxz[lzp]-tauxz[l])/((zmin(k+1)-zmin(k))*(rho[lxm]+rho[l]))*dt;
 #endif
+	viscx[l]+=vx[l];
 #endif
 
 #ifdef Y
+	viscy[l] = -vy[l];
 	vy[l] += 2.0*(ymed(j)*tauyy[l]-ymed(j-1)*tauyy[lym])/((ymed(j)-ymed(j-1))*(rho[l]+rho[lym])*ymin(j))*dt;
 #if defined(Y) && defined(X)
 	vy[l] += 2.0*(tauyx[lxp]-tauyx[l])/( (xmin(i+1)-xmin(i))*ymin(j)*(rho[l]+rho[lym]))*dt;
@@ -117,6 +126,7 @@ void addviscosity_cyl_cpu(real dt) {
 #if defined(Z) && defined(Y)
 	vy[l] += 2.0*(tauzy[lzp]-tauzy[l])/((zmin(k+1)-zmin(k))*(rho[l]+rho[lym]))*dt;
 #endif
+	viscy[l] += vy[l];
 #endif
 
 #ifdef Z

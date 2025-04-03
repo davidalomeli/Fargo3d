@@ -131,6 +131,13 @@ Field *Sdiffyfzc;
 Field *Sdiffyczf;
 Field *Sdiffyfzf;
 
+Field* GradPressurex;
+Field* GradPressurey;
+Field* GradPotx;
+Field* GradPoty;
+Field* Viscx;
+Field* Viscy;
+ 
 
 // Below: fields specific to FARGO algorithms
 Field2D *VxMed;
