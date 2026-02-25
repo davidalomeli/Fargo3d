@@ -15,6 +15,12 @@ TauDamp                 0.3
 
 ### Dust parameters
 
+RHOSOLID               2.4
+PARTICLESIZE1          1.0
+PARTICLESIZE2          1.0
+PARTICLESIZE3          1.0
+
+
 Invstokes1		10.0   Inverse of the Stokes number for dust1
 Invstokes2		1.0    Inverse of the Stokes number for dust2
 Invstokes3		0.1    Inverse of the Stokes number for dust3
