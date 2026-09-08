@@ -673,7 +673,15 @@ void WriteOutputs(int type) {
 #ifndef MPIIO
   if (WRITEDENSITY)
     __WriteField(Density, TimeStep);
-  if (WRITEENERGY)
+#ifdef ACCMONITOR
+  __WriteField(GradPotx, TimeStep);
+  __WriteField(GradPressurex, TimeStep);
+  __WriteField(GradPoty, TimeStep);
+  __WriteField(GradPressurey, TimeStep);
+  __WriteField(Viscx, TimeStep);
+  __WriteField(Viscy, TimeStep);
+#endif
+if (WRITEENERGY)
     if(Fluidtype != DUST) __WriteField(Energy, TimeStep);
 #ifdef MHD //MHD is 3D.
   if(Fluidtype == GAS){

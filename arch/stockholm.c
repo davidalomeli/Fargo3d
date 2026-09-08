@@ -1,4 +1,3 @@
-//<FLAGS>
 //#define __GPU
 //#define __NOPROTO
 //<\FLAGS>
@@ -130,22 +129,22 @@ void StockholmBoundary_cpu(real dt) {
 	rampz = 0.0;
 	rampzz = 0.0;
 #ifdef Y
-	if(ymed(j) > Y_sup) {
-	  rampy   = (ymed(j)-Y_sup)/(y_max-Y_sup);
-	}
+//	if(ymed(j) > Y_sup) {
+//	  rampy   = (ymed(j)-Y_sup)/(y_max-Y_sup);
+//	}
 	if(ymed(j) < Y_inf) {
 	  rampy   = (Y_inf-ymed(j))/(Y_inf-y_min);
 	}
 	rampy *= rampy;		/* Parabolic ramp as in De Val Borro et al (2006) */
 #endif
 #ifdef Z
-	if(zmed(k) > Z_sup) {
-	  rampz   = (zmed(k)-Z_sup)/(z_max-Z_sup);
-	}
-	if(zmed(k) < Z_inf) {
-	  rampz   = (Z_inf-zmed(k))/(Z_inf-z_min);
-	}
-	rampz = rampz * rampz;		/* vertical ramp in X^2 */
+	//if(zmed(k) > Z_sup) {
+	 // rampz   = (zmed(k)-Z_sup)/(z_max-Z_sup);
+	//}
+	//if(zmed(k) < Z_inf) {
+	  //rampz   = (Z_inf-zmed(k))/(Z_inf-z_min);
+	//}
+	//rampz = rampz * rampz;		/* vertical ramp in X^2 */
 	if(zmin(k) > Z_sup) {
 	  rampzz  = (zmin(k)-Z_sup)/(z_max-Z_sup);
 	}
@@ -163,6 +162,8 @@ void StockholmBoundary_cpu(real dt) {
 	tau = ds*sqrt(ymed(j)*ymed(j)*ymed(j)/G/MSTAR);
 	if(ramp>0.0) {
 	  taud = tau/ramp;
+	// Density Damping to original value
+//	  rho0[l2D] = 0;
 	  rho[l] = (rho[l]*taud+rho0[l2D]*dt)/(dt+taud);
 #ifdef X
 	  vx0_target = vx0[l2D];
@@ -171,9 +172,11 @@ void StockholmBoundary_cpu(real dt) {
 	  radius *= sin(zmed(k));
 #endif
 	  vx0_target -= (of-of0)*radius;
+          
 	  vx[l] = (vx[l]*taud+vx0_target*dt)/(dt+taud);
 #endif
 #ifdef Y
+	 // vy0[l2D] = -0.01;
 	  vy[l] = (vy[l]*taud+vy0[l2D]*dt)/(dt+taud);
 #endif
 	}

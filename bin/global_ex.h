@@ -135,6 +135,13 @@ extern Field *Sdiffyfzc;
 extern Field *Sdiffyczf;
 extern Field *Sdiffyfzf;
 
+extern Field* GradPressurex;
+extern Field* GradPressurey;
+extern Field* GradPotx;
+extern Field* GradPoty;
+extern Field* Viscx;
+extern Field* Viscy;
+ 
 
 // Below: fields specific to FARGO algorithms
 extern Field2D *VxMed;

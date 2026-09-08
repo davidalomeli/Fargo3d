@@ -75,6 +75,14 @@ OPENOUTER:
         Staggered: |(a< 0.0 ? 0.0: a)|(a<0.0 ? 0.0: a)|a|
         Centered:  |(a< 0.0 ? 0.0: a)|a|
 
+POWERLAW:
+           Centered:   |active*pow(Ymed(jact)/Ymed(jgh),0.5)|active|
+           Staggered: |active*pow(Ymed(jact)/Ymed(jgh),0.5)|active*pow(Ymed(jact)/Ymed(jgh),0.5)|active|
+
+VALOR:
+           Centered:   |'EPSILON'*pow(Ymed(jgh),-0.5)|active|
+
+
 HALFINNER:
 	Centered: |(0.5*a)|a|
 	

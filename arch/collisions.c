@@ -15,6 +15,10 @@ void _collisions_cpu(real dt, int id1, int id2, int id3, int option) {
   real *velocities_input[NFLUIDS];
   real *velocities_output[NFLUIDS];
 
+#ifdef DUSTSIZE
+  INPUT(Fluids[0]->Energy);
+#endif
+
   int ii;
 
   for (ii=0; ii<NFLUIDS; ii++) {
@@ -79,6 +83,9 @@ void _collisions_cpu(real dt, int id1, int id2, int id3, int option) {
 //<\USER_DEFINED>
 
 //<EXTERNAL>
+#ifdef DUSTSIZE
+  real* cs = Fluids[0]->Energy->field_cpu;
+#endif
   int pitch  = Pitch_cpu;
   int stride = Stride_cpu;
   int size_x = XIP; 

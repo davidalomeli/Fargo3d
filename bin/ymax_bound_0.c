@@ -52,7 +52,6 @@ OUTPUT(Vy);
   int nghz = NGHZ;
   int pitch  = Pitch_cpu;
   int stride = Stride_cpu;
-  real omegaframe = OMEGAFRAME;
 //<\EXTERNAL>
 
 //<CONSTANT>
@@ -85,11 +84,11 @@ OUTPUT(Vy);
 	jgh = (ny+nghy+j);
 	jact = (ny+nghy-1-j);
 
-	density[lgh] = density[lact];
-	vx[lgh] = (vx[lact]+ymed(jact)*omegaframe)*sqrt(ymed(jact)/ymed(jgh))-ymed(jgh)*omegaframe;
+	density[lgh] = density[lact]*pow(ymed(jact)/ymed(jgh),0.5);
+	vx[lgh] = vx[lact]*pow(ymed(jact)/ymed(jgh),0.5);
 	if (j<size_y-1)
-		vy[lghs] = (vy[lacts]< 0.0 ? 0.0: vy[lacts]);
-	vy[lacts_null] = (vy[lacts_null_mirror]<0.0 ? 0.0: vy[lacts_null_mirror]);
+		vy[lghs] = vy[lacts]*pow(ymed(jact)/ymed(jgh),0.5);
+	vy[lacts_null] = vy[lacts_null_mirror]*pow(ymed(jact)/ymed(jgh),0.5);
 //<\#>
 #ifdef X
       }

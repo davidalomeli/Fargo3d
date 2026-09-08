@@ -1,5 +1,5 @@
 FULLDEBUG=0
-SETUP=fargo_multifluid
+SETUP=fargo_dvd
 PARALLEL=1
 BIGMEM=1
 RESCALE=0

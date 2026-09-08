@@ -631,6 +631,14 @@ void CreateFields() {
   Qs            = CreateField("Qs"           , 0,0,0,0);
   Pressure      = CreateField("Pressure"     , 0,0,0,0);
   Total_Density = CreateField("Total_Density", 0,0,0,0);
+  //Fields for force monitor outputs
+  GradPressurex = CreateField("GradPressurex"     , 0,0,0,0);
+  GradPressurey = CreateField("GradPressurey"     , 0,0,0,0);
+  GradPotx = CreateField("GradPotx"     , 0,0,0,0);
+  GradPoty = CreateField("GradPoty"    , 0,0,0,0);
+  Viscx = CreateField("Viscx"     , 0,0,0,0);
+  Viscy = CreateField("Viscy"    , 0,0,0,0);
+  //
   
   QL      = CREATEFIELDALIAS("QLeft", Pressure, 0);
   QR      = CreateField("QRight", 0,0,0,0);

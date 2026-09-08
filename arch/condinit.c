@@ -3,7 +3,7 @@
 void _CondInit() {
   
   int i,j,k;
-  real r, omega;
+  real r, omega, phi;
   
   real *rho  = Density->field_cpu;
   real *cs   = Energy->field_cpu;
@@ -12,7 +12,12 @@ void _CondInit() {
   
   real rhog, rhod;
   real vk;
-  
+  real h = ASPECTRATIO;
+  real ECC = 0.4;
+  real eta = 0.75*ASPECTRATIO*ASPECTRATIO;
+ // real TS = 1/INVSTOKES1;
+
+
   i = j = k = 0;
   
   for (k=0; k<Nz+2*NGHZ; k++) {
@@ -20,23 +25,52 @@ void _CondInit() {
       for (i=0; i<Nx+2*NGHX; i++) {
 	
 	r     = Ymed(j);
+        phi   = Xmed(i); //this line
 	omega = sqrt(G*MSTAR/r/r/r);                       //Keplerian frequency
 	rhog  = SIGMA0*pow(r/R0,-SIGMASLOPE);              //Gas surface density
+	// rhod is per dust species rather than total
         rhod  = rhog*EPSILON;                              //Dust surface density
+
+	real vkmed = sqrt(G*MSTAR/ymed(j));
+        real vkmin = sqrt(G*MSTAR/ymin(j));
+
 
 	if (Fluidtype == GAS) {
 	  rho[l]   = rhog;
 	  vphi[l]  = omega*r*sqrt(1.0 + pow(ASPECTRATIO,2)*pow(r/R0,2*FLARINGINDEX)*
 				  (2.0*FLARINGINDEX - 1.0 - SIGMASLOPE));
-	  vr[l]    = 0.0;
+//	  vr[l]  = 0.0;
+	 //viscosity term
+         // vr[l]  = -3*NU_A/2/r;
+
+
+	  //DUSTYDISK COUPLING
+//	  vr[l] = 2*EPSILON*TS/(pow(TS,2) + pow(1+EPSILON,2))*eta*vkmin;
+//	  vphi[l] = vkmed;
+//	  vphi[l] -= (pow(TS,2) + 1 + EPSILON)/(pow(TS,2)+pow(1+EPSILON,2))*eta*vkmed;
+//          cs[l]    = vkmed*ASPECTRATIO;
+
+
+
+         // vr[l]    = ECC*sin(phi)*sqrt(G * MSTAR / r / (1+ECC*cos(phi))); //this line
+         // vphi[l]  = sqrt(G * MSTAR * (1 + ECC*cos(phi)) / r);  //this line
+
+//
 	  cs[l]    = ASPECTRATIO*pow(r/R0,FLARINGINDEX)*omega*r;
-	}
+	  vr[l]    = -3.0*ALPHA*h*cs[l]/2.0;
+}
 	
 	if (Fluidtype == DUST) {
+//These are all the original terms
 	  rho[l]  = rhod;
 	  vphi[l] = omega*r;
 	  vr[l]   = 0.0;
 	  cs[l]   = 0.0;
+
+//Dust Disk Terms
+	  //vr[l]    = -2*TS/(pow(TS,2) + pow(1+EPSILON,2))*eta*vkmin;
+          //vphi[l]  = vkmed;
+          //vphi[l] -= (1 + EPSILON)/(pow(TS,2)+pow(1+EPSILON,2))*eta*vkmed;
 	}
 	
 	vphi[l] -= OMEGAFRAME*r;
@@ -49,7 +83,7 @@ void _CondInit() {
 void CondInit() {
   
   int id_gas = 0;
-  int feedback = YES;
+  int feedback = NO;
   //We first create the gaseous fluid and store it in the array Fluids[]
   Fluids[id_gas] = CreateFluid("gas",GAS);
 
@@ -76,8 +110,18 @@ void CondInit() {
    Note: ColRate() moves the collision matrix to the device.
    If feedback=NO, gas does not feel the drag force.*/
   
-  ColRate(INVSTOKES1, id_gas, 1, feedback);
-  ColRate(INVSTOKES2, id_gas, 2, feedback);
-  ColRate(INVSTOKES3, id_gas, 3, feedback);
+//  ColRate(INVSTOKES1, id_gas, 1, feedback);
+//  ColRate(INVSTOKES2, id_gas, 2, feedback);
+//  ColRate(INVSTOKES3, id_gas, 3, feedback);
+
+    #ifdef DUSTSIZE
+    real rhos = RHOSOLID/(MSTAR_CGS/(R0_CGS*R0_CGS*R0_CGS))*(MSTAR/(R0*R0*R0));
+    real size1 = PARTICLESIZE1*R0/R0_CGS;
+//    real size2 = PARTICLESIZE2*R0/R0_CGS;
+//    real size3 = PARTICLESIZE3*R0/R0_CGS;
+    ColRate((2./M_PI)/(size1*rhos), id_gas, 1, feedback);
+//    ColRate(sqrt(8./M_PI)/(size2*rhos), id_gas, 2, feedback);
+//    ColRate(sqrt(8./M_PI)/(size3*rhos), id_gas, 3, feedback);
+    #endif
 
 }

@@ -23,12 +23,16 @@ void SubStep1_x_cpu (real dt) {
   INPUT(Bz);
 #endif  
   OUTPUT(Vx_temp);
+  OUTPUT(GradPressurex);
+  OUTPUT(GradPotx);
 //<\USER_DEFINED>
 
 //<EXTERNAL>
   real* p   = Pressure->field_cpu;
   real* pot = Pot->field_cpu;
   real* rho = Density->field_cpu;
+  real* gprx = GradPressurex->field_cpu;
+  real* gpox = GradPotx->field_cpu;
 #ifdef X
   real* vx      = Vx->field_cpu;
   real* vx_temp = Vx_temp->field_cpu;
@@ -114,11 +118,11 @@ void SubStep1_x_cpu (real dt) {
 
 	vx_temp[ll] = vx[ll];
 	if(fluidtype != DUST) vx_temp[ll] -=  dtOVERrhom*(p[ll]-p[llxm])*Inv_zone_size_xmed(i,j,k);
-	
+	gprx[ll] = -dtOVERrhom*(p[ll]-p[llxm])*Inv_zone_size_xmed(i,j,k);
 #ifdef POTENTIAL
 	vx_temp[ll] -= (pot[ll]-pot[llxm])*dt*Inv_zone_size_xmed(i,j,k);
+	gpox[ll] = -(pot[ll]-pot[llxm])*dt*Inv_zone_size_xmed(i,j,k);
 #endif
-
 #ifdef MHD
 	if(fluidtype == GAS) {
 

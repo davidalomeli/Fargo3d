@@ -1,10 +1,56 @@
-outputs/*
-fargo_lowres*
-fargo_highres*
-fargo_1*
-fargo_half*
-fargo_double*
-lowres_test*
-highres_test*
-.git2/*
-.git_backup/*
+# FARGO3D compiled files
+fargo3d
+*.o
+*.so
+
+# Simulation outputs
+*.dat
+*.out
+*.err
+*_error.txt
+*_output.txt
+
+# FARGO3D output directories/files
+outputs/
+output/
+
+# Python
+__pycache__/
+*.pyc
+
+# Temporary files
+*.tmp
+*.log
+
+# Simulation/run directories
+errors/
+running/
+
+
+# Simulation executables
+/fargo_dustydisk_*
+/fargo_gasdisk_*
+/fargo_onlygas*
+/fargo_single_dust_*
+/fargo_triple_dust_*
+/fargo_stokesdisk*
+/fargo_stretch
+/fargo_job*
+
+# Simulation/run directories
+errors/
+running/
+
+# Python cache
+scripts/__pycache__/
+
+# Compiled objects
+bin/*.o
+bin/.tmp
+
+# Editor backups / temporary files
+*.save
+*.save.*
+setups/~/
+
+/fargo_gasdisk

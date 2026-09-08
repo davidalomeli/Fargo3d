@@ -172,11 +172,12 @@ void StockholmBoundary_cpu(real dt) {
 	  radius *= sin(zmed(k));
 #endif
 	  vx0_target -= (of-of0)*radius;
-//	  vx[l] = (vx[l]*taud+vx0_target*dt)/(dt+taud);
+          
+	  vx[l] = (vx[l]*taud+vx0_target*dt)/(dt+taud);
 #endif
 #ifdef Y
 	 // vy0[l2D] = -0.01;
-//	  vy[l] = (vy[l]*taud+vy0[l2D]*dt)/(dt+taud);
+	  vy[l] = (vy[l]*taud+vy0[l2D]*dt)/(dt+taud);
 #endif
 	}
 #ifdef Z

@@ -18,6 +18,7 @@ omega = (id1+id3)*sqrt(G*MSTAR/(ymed(j)*ymed(j)*ymed(j))) +
   id2*sqrt(G*MSTAR/(ymin(j)*ymin(j)*ymin(j)));
 #endif
 
+
 #ifdef CONSTANTSTOKESNUMBER
 #ifdef SHEARINGBOX
 omega = OMEGAFRAME;
@@ -41,12 +42,22 @@ for (o=0; o<NFLUIDS; o++) {
       
       /* In the line below, the collision term should be
 	 alpha[o+p*NFLUIDS], however, we use alpha[p+o*NFLUIDS] to
-	 have the possibility of disabling feedback if necessary.*/      
-      
+	 have the possibility of disabling feedback if necessary.*/
 #if defined(STOKESNUMBER) || defined(CONSTANTSTOKESNUMBER)
-      if ( p > o )  m[p+o*NFLUIDS] = -dt*omega*alpha[p+o*NFLUIDS]*rho_p/rho_o;
-      else          m[p+o*NFLUIDS] = -dt*omega*alpha[p+o*NFLUIDS];
+#ifdef DUSTSIZE
+#ifdef Z
+      if ( p > o )  m[p+o*NFLUIDS] = -dt*omega*alpha[p+o*NFLUIDS]*0.25*(rho[0][l] + rho[0][idm])*(cs[l]+cs[idm])*rho_p/rho_o;
+      else m[p+o*NFLUIDS] = -dt*omega*alpha[p+o*NFLUIDS]*0.25*(rho[0][l] + rho[0][idm])*(cs[l]+cs[idm]);
+#else
+      if ( p > o )  m[p+o*NFLUIDS] = -dt*omega*alpha[p+o*NFLUIDS]*0.5*(rho[0][l] + rho[0][idm])*rho_p/rho_o;
+      else m[p+o*NFLUIDS] = -dt*omega*alpha[p+o*NFLUIDS]*0.5*(rho[0][l] + rho[0][idm]);
 #endif
+#else
+      if ( p > o )  m[p+o*NFLUIDS] = -dt*omega*alpha[p+o*NFLUIDS]*rho_p/rho_o;
+      else m[p+o*NFLUIDS] = -dt*omega*alpha[p+o*NFLUIDS];
+#endif
+#endif
+
 #ifdef CONSTANTDRAG
       m[p+o*NFLUIDS] = -dt*alpha[p+o*NFLUIDS]/rho_o;
 #endif
@@ -65,15 +76,23 @@ for (o=0; o<NFLUIDS; o++) {
 	if (q != p){
 	  
 	  rho_q  = 0.5*(rho[q][l] + rho[q][idm]);
-	  
-#if defined(STOKESNUMBER) || defined(CONSTANTSTOKESNUMBER)
-	  
+
+#if defined(STOKESNUMBER) || defined(CONSTANTSTOKESNUMBER)	  
 	  /* In the line below, the collision term should be
 	     alpha[p+q*NFLUIDS], however, we use alpha[q+p*NFLUIDS] to
-	     have the possibility of disabling feedback if necessary.*/
-	  
+	     have the possibility of disabling feedback if necessary.*/	  
+#ifdef DUSTSIZE
+#ifdef Z
+	  if( q > p ) sum += alpha[q+p*NFLUIDS]*0.25*(rho[0][l] + rho[0][idm])*(cs[l]+cs[idm])*rho_q/rho_p;
+	  else        sum += alpha[q+p*NFLUIDS]*0.25*(rho[0][l] + rho[0][idm])*(cs[l]+cs[idm]);
+#else
+        if( q > p ) sum += alpha[q+p*NFLUIDS]*0.5*(rho[0][l] + rho[0][idm])*rho_q/rho_p;
+	  else        sum += alpha[q+p*NFLUIDS]*0.5*(rho[0][l] + rho[0][idm]);
+#endif
+#else
 	  if( q > p ) sum += alpha[q+p*NFLUIDS]*rho_q/rho_p;
 	  else        sum += alpha[q+p*NFLUIDS];
+#endif
 #endif
 #ifdef CONSTANTDRAG
 	  sum += alpha[q+p*NFLUIDS];
@@ -91,4 +110,13 @@ for (o=0; o<NFLUIDS; o++) {
     }
   }
   b[o] = velocities_input[o][l];
+  
  }
+
+///* Display the matrix */
+//for (o=0; o<NFLUIDS; o++) {
+//  for (p=0; p<NFLUIDS; p++) {
+//	printf("%1.16e\t", m[p+o*NFLUIDS]);
+//      }
+//    printf("\n");
+// }

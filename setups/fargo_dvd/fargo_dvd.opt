@@ -3,8 +3,8 @@
 # standard setup of the former FARGO code including a gas disk with multiple 
 # dust species.
 # In order to run it, do:
-# make SETUP=fargo_multifluid
-# fargo3d setups/fargo_multifluid/fargo_multifluid.par
+# make SETUP=fargo_dvd
+# fargo3d setups/fargo_dvd/fargo_dvd.par
 # END
 #-------------------------------------------------------------------------
 # Warning: You have to define the following numbers according
@@ -27,6 +27,8 @@ FARGO_OPT +=  -DY
 
 FARGO_OPT += -DACCMONITOR
 
+#FARGO_OPT += -DWRITEGHOSTS
+
 #Equation of State
 FARGO_OPT +=  -DISOTHERMAL
 
@@ -35,12 +37,13 @@ FARGO_OPT +=  -DCYLINDRICAL
 
 FARGO_OPT += -DPOTENTIAL
 
-FARGO_OPT += -DVISCOSITY
-#FARGO_OPT += -DALPHAVISCOSITY
+#FARGO_OPT += -DVISCOSITY
+FARGO_OPT += -DALPHAVISCOSITY
 
 #Drag force between species
 FARGO_OPT += -DDRAGFORCE
 FARGO_OPT += -DSTOKESNUMBER
+#Use -DDUSTSIZE to use dust size
 FARGO_OPT += -DDUSTSIZE
 FARGO_OPT += -DDUSTDIFFUSION
 

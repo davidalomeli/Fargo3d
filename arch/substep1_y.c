@@ -36,12 +36,16 @@ void SubStep1_y_cpu (real dt) {
   INPUT(Bx);
   INPUT(Bz);
 #endif
+  OUTPUT(GradPressurey);
+  OUTPUT(GradPoty);
 //<\USER_DEFINED>
 
 //<EXTERNAL>
   real* p   = Pressure->field_cpu;
   real* pot = Pot->field_cpu;
   real* rho = Density->field_cpu;
+  real* gpry = GradPressurey->field_cpu;
+  real* gpoy = GradPoty->field_cpu;
 #ifdef X
   real* vx      = Vx->field_cpu;
 #ifdef COLLISIONPREDICTOR
@@ -145,9 +149,10 @@ void SubStep1_y_cpu (real dt) {
 	llzp = lzp;
 #endif //ENDIF Z
 	dtOVERrhom = 2.0*dt/(rho[ll]*(ymin(j+1)-ymin(j))+rho[llym]*(ymin(j)-ymin(j-1)))*(ymed(j)-ymed(j-1));
-
+	
 	vy_temp[ll] = vy[ll];
 	if(fluidtype != DUST) vy_temp[ll]-=  dtOVERrhom*(p[ll]-p[llym])/(ymed(j)-ymed(j-1));
+	gpry[ll] = -dtOVERrhom*(p[ll]-p[llym])/(ymed(j)-ymed(j-1));
 	
 #ifdef CARTESIAN
 #ifdef SHEARINGBOX
@@ -241,6 +246,7 @@ void SubStep1_y_cpu (real dt) {
 
 #ifdef POTENTIAL
 	  vy_temp[ll] -= (pot[ll]-pot[llym])*dt/(ymed(j)-ymed(j-1));
+	  gpoy[ll] = -dt*(pot[ll]-pot[llym])/(ymed(j)-ymed(j-1));
 #endif //ENDIF POTENTIAL
 #endif //ENDIF Y
 
