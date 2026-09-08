@@ -1,0 +1,7 @@
+POWERLAW:
+           Centered:   |active*pow(Ymed(jact)/Ymed(jgh),0.5)|active|
+           Staggered: |active*pow(Ymed(jact)/Ymed(jgh),0.5)|active*pow(Ymed(jact)/Ymed(jgh),0.5)|active|
+
+VALOR:
+           Centered:   |'EPSILON'*pow(Ymed(jgh),-0.5)|active|
+

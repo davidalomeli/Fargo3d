@@ -1,0 +1,39 @@
+#!/bin/bash
+#SBATCH --job-name=r0.3_t0.3_dz2_bcIF_rhodamporig_novdamp_contd1e-3dt
+#SBATCH --output=fargo_restart_output.txt
+#SBATCH --error=fargo_restart_error.txt
+#SBATCH --mail-user=dlomeli@miners.utep.edu
+#SBATCH --mail-type=ALL
+#SBATCH -N 1
+#SBATCH -n 20
+#SBATCH --account=jakar_partner_physk
+#SBATCH --partition=medium
+#SBATCH --qos=jakar_medium_physk
+
+module purge
+module load gnu12 openmpi4
+source /home/dlomeli/myenv/bin/activate
+source /opt/intel/oneapi/setvars.sh -ofi_internal=1 --force
+export I_MPI_OFI_PROVIDER=tcp
+
+cd /project/phys-k/Fargo3d || { echo "Fargo3d directory not found!"; exit 1; }
+
+
+make clean
+rm -f fargo3d
+
+# -----------------------------
+# 5. Build FARGO3D
+# -----------------------------
+echo "Building FARGO3D..."
+make PARALLEL=1 SETUP=fargo_dvd FULLDEBUG=0 || { echo "Build failed!"; exit 2; }
+
+if [[ ! -f fargo3d ]]; then
+    echo "fargo3d binary not found after build!"
+    exit 3
+fi
+ls -lh fargo3d
+
+mpirun -np 20 ./fargo3d -S 100 /project/phys-k/fargo_share/fargo_r0.3_t0.3_dz2_bcIF_rhodamporig_novdamp/restart.par > fargo_restart_output.txt 2> fargo_restart_error.txt
+
+echo "Restart job finished."

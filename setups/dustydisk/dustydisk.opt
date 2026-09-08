@@ -1,0 +1,43 @@
+# You may enter a description between the BEGIN and END labels.
+# BEGIN
+# Dusty disk in polar coordinates with simple boundaries
+# END
+#---------------------------------------------------------------
+
+FLUIDS := 0 1 
+NFLUIDS = 2
+FARGO_OPT += -DNFLUIDS=${NFLUIDS}
+
+
+#Enable the drag force between fluids
+FARGO_OPT += -DDRAGFORCE      
+#We select the drag model (see src/collision_kernel.h)
+FARGO_OPT += -DSTOKESNUMBER   
+
+#Viscosity
+FARGO_OPT += -DALPHAVISCOSITY
+
+#Coordinate System
+FARGO_OPT += -DCYLINDRICAL
+
+#Dimensions (x->phi,y->r)
+FARGO_OPT += -DX
+FARGO_OPT += -DY
+
+#Equation of State
+FARGO_OPT += -DISOTHERMAL
+
+#Potential
+FARGO_OPT += -DPOTENTIAL
+
+#Buffer zones before applying boundaries
+FARGO_OPT += -DSTOCKHOLM
+
+
+
+#Cuda blocks
+ifeq (${GPU}, 1)
+FARGO_OPT += -DBLOCK_X=16
+FARGO_OPT += -DBLOCK_Y=16
+FARGO_OPT += -DBLOCK_Z=1
+endif

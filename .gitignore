@@ -54,3 +54,5 @@ bin/.tmp
 setups/~/
 
 /fargo_gasdisk
+ssh_key
+ssh_key.pub

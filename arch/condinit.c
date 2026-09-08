@@ -124,4 +124,12 @@ void CondInit() {
 //    ColRate(sqrt(8./M_PI)/(size3*rhos), id_gas, 3, feedback);
     #endif
 
+  #ifdef DUSTSIZE
+  real rhos = RHOSOLID/(MSTAR_CGS/(R0_CGS*R0_CGS*R0_CGS))*(MSTAR/(R0*R0*R0));
+  real size1 = PARTICLESIZE1*R0/R0_CGS;
+  real size2 = PARTICLESIZE2*R0/R0_CGS;
+  ColRate(sqrt(8./M_PI)/(size1*rhos), id_gas, 1, feedback);
+  ColRate(sqrt(8./M_PI)/(size2*rhos), id_gas, 2, feedback);
+  #endif
+
 }

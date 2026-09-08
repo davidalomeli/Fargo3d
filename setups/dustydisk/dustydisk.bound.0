@@ -1,0 +1,11 @@
+Density:
+	Ymin:  POWERLAW
+	Ymax:  POWERLAW
+
+Vx:
+	Ymin:  POWERLAW
+	Ymax:  POWERLAW
+
+Vy:
+	Ymin:  POWERLAW
+	Ymax:  POWERLAW
