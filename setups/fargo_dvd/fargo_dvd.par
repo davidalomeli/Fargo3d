@@ -57,4 +57,4 @@ DT			0.314159265359	Time step length
 Ninterm	 		100		Time steps between outputs
 Ntot			500		Total number of time steps
 
-OutputDir		/project/phys-k/fargo_share/fargo_dustydisk_alldamp_viscr_ghosttest
+OutputDir		/project/phys-k/fargo_share/fargo_dustydisk_alldamp_viscr_noghosttest
