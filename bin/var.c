@@ -14,7 +14,7 @@ void InitVariables() {
   init_var("COLORBAR", (char*)&COLORBAR, BOOL, NO, "1");
   init_var("COORDINATES", (char*)&COORDINATES, STRING, NO, "standard");
   init_var("CS", (char*)&CS, REAL, NO, "1.0");
-  init_var("DAMPINGZONE", (char*)&DAMPINGZONE, REAL, NO, "1.15");
+  init_var("DAMPINGZONE", (char*)&DAMPINGZONE, REAL, NO, "2.0");
   init_var("DT", (char*)&DT, REAL, NO, "0.314159265359");
   init_var("ECCENTRICITY", (char*)&ECCENTRICITY, REAL, NO, "0.1");
   init_var("EPSILON", (char*)&EPSILON, REAL, NO, "0.01");
@@ -41,7 +41,7 @@ void InitVariables() {
   init_var("OMEGAFRAME", (char*)&OMEGAFRAME, REAL, NO, "0.0");
   init_var("OORTA", (char*)&OORTA, REAL, NO, "-0.75");
   init_var("ORBITALRADIUS", (char*)&ORBITALRADIUS, REAL, NO, "0.0");
-  init_var("OUTPUTDIR", (char*)&OUTPUTDIR, STRING, NO, "/project/phys-k/fargo_share/fargo_gasdisk_alldamp_viscr");
+  init_var("OUTPUTDIR", (char*)&OUTPUTDIR, STRING, NO, "/project/phys-k/fargo_share/fargo_gasdisk_alldamp_viscr_lowdamp");
   init_var("PARTICLESIZE1", (char*)&PARTICLESIZE1, REAL, NO, "0.1");
   init_var("PERIODICY", (char*)&PERIODICY, BOOL, NO, "0");
   init_var("PERIODICZ", (char*)&PERIODICZ, BOOL, NO, "0");
@@ -60,7 +60,7 @@ void InitVariables() {
   init_var("SIGMA0", (char*)&SIGMA0, REAL, NO, "1.0e-4");
   init_var("SIGMASLOPE", (char*)&SIGMASLOPE, REAL, NO, "0.5");
   init_var("SPACING", (char*)&SPACING, STRING, NO, "Log");
-  init_var("TAUDAMP", (char*)&TAUDAMP, REAL, NO, "0.1");
+  init_var("TAUDAMP", (char*)&TAUDAMP, REAL, NO, "10.0");
   init_var("THICKNESSSMOOTHING", (char*)&THICKNESSSMOOTHING, REAL, NO, "0.1");
   init_var("VERTICALDAMPING", (char*)&VERTICALDAMPING, REAL, NO, "0.0");
   init_var("VMAX", (char*)&VMAX, REAL, NO, "1.0");

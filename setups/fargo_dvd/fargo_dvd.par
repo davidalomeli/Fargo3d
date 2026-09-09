@@ -8,9 +8,9 @@ SigmaSlope		0.5		Slope of the surface density
 FlaringIndex		0.0		Flare of the disk
 #Nu			1.0e-5		Uniform kinematic viscosity
 ALPHA                   1.0e-3
-DampingZone		1.15
+DampingZone		2.0
 Spacing                 Log
-TauDamp                 0.1
+TauDamp                 10.0
 
 
 ### Dust parameters
@@ -57,4 +57,4 @@ DT			0.314159265359	Time step length
 Ninterm	 		100		Time steps between outputs
 Ntot			500		Total number of time steps
 
-OutputDir		/project/phys-k/fargo_share/fargo_gasdisk_alldamp_viscr
+OutputDir		/project/phys-k/fargo_share/fargo_gasdisk_alldamp_viscr_lowdamp
