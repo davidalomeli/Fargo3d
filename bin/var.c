@@ -14,7 +14,7 @@ void InitVariables() {
   init_var("COLORBAR", (char*)&COLORBAR, BOOL, NO, "1");
   init_var("COORDINATES", (char*)&COORDINATES, STRING, NO, "standard");
   init_var("CS", (char*)&CS, REAL, NO, "1.0");
-  init_var("DAMPINGZONE", (char*)&DAMPINGZONE, REAL, NO, "2.0");
+  init_var("DAMPINGZONE", (char*)&DAMPINGZONE, REAL, NO, "4.0");
   init_var("DT", (char*)&DT, REAL, NO, "0.06283185307179586476");
   init_var("ECCENTRICITY", (char*)&ECCENTRICITY, REAL, NO, "0.1");
   init_var("EPSILON", (char*)&EPSILON, REAL, NO, "0.01");
@@ -41,7 +41,7 @@ void InitVariables() {
   init_var("OMEGAFRAME", (char*)&OMEGAFRAME, REAL, NO, "0.0");
   init_var("OORTA", (char*)&OORTA, REAL, NO, "-0.75");
   init_var("ORBITALRADIUS", (char*)&ORBITALRADIUS, REAL, NO, "0.0");
-  init_var("OUTPUTDIR", (char*)&OUTPUTDIR, STRING, NO, "/project/phys-k/fargo_share/fargo_gasdisk_alldamp_viscr_middamp_hihires_superfinedt_openinner_ghost");
+  init_var("OUTPUTDIR", (char*)&OUTPUTDIR, STRING, NO, "/project/phys-k/fargo_share/fargo_gasdisk_alldamp_viscr_lomiddamp_hihires_superfinedt_openinner_ghost");
   init_var("PARTICLESIZE1", (char*)&PARTICLESIZE1, REAL, NO, "0.1");
   init_var("PERIODICY", (char*)&PERIODICY, BOOL, NO, "0");
   init_var("PERIODICZ", (char*)&PERIODICZ, BOOL, NO, "0");
