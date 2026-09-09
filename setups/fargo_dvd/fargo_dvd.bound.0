@@ -10,6 +10,6 @@ Vx:
 	Ymax: POWERLAW
 
 Vy:
-	Ymin: POWERLAW
+	Ymin: OPENINNER
 	Ymax: POWERLAW
 

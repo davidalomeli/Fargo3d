@@ -54,7 +54,7 @@ Frame			F
 
 #DT                      0.06283185307179586476
 DT			0.314159265359	Time step length
-Ninterm	 		5		Time steps between outputs
-Ntot			100		Total number of time steps
+Ninterm	 		1		Time steps between outputs
+Ntot			25		Total number of time steps
 
-OutputDir		/project/phys-k/fargo_share/fargo_gasdisk_alldamp_viscr_lowdamp_hihires_finedt
+OutputDir		/project/phys-k/fargo_share/fargo_gasdisk_alldamp_viscr_lowdamp_hihires_evenfinerdt_openinner
