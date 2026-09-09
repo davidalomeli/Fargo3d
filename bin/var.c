@@ -29,10 +29,10 @@ void InitVariables() {
   init_var("INDIRECTTERM", (char*)&INDIRECTTERM, BOOL, NO, "1");
   init_var("KILLINGBCCOLATITUDE", (char*)&KILLINGBCCOLATITUDE, REAL, NO, "-0.2");
   init_var("MASSTAPER", (char*)&MASSTAPER, REAL, NO, "0.0");
-  init_var("NINTERM", (char*)&NINTERM, INT, NO, "100");
+  init_var("NINTERM", (char*)&NINTERM, INT, NO, "5");
   init_var("NOISE", (char*)&NOISE, REAL, NO, "0.0");
   init_var("NSNAP", (char*)&NSNAP, INT, NO, "0");
-  init_var("NTOT", (char*)&NTOT, INT, NO, "500");
+  init_var("NTOT", (char*)&NTOT, INT, NO, "100");
   init_var("NU", (char*)&NU, REAL, NO, "0.0");
   init_var("NX", (char*)&NX, INT, NO, "1");
   init_var("NY", (char*)&NY, INT, NO, "2048");
@@ -41,7 +41,7 @@ void InitVariables() {
   init_var("OMEGAFRAME", (char*)&OMEGAFRAME, REAL, NO, "0.0");
   init_var("OORTA", (char*)&OORTA, REAL, NO, "-0.75");
   init_var("ORBITALRADIUS", (char*)&ORBITALRADIUS, REAL, NO, "0.0");
-  init_var("OUTPUTDIR", (char*)&OUTPUTDIR, STRING, NO, "/project/phys-k/fargo_share/fargo_gasdisk_alldamp_viscr_lowdamp_hihires");
+  init_var("OUTPUTDIR", (char*)&OUTPUTDIR, STRING, NO, "/project/phys-k/fargo_share/fargo_gasdisk_alldamp_viscr_lowdamp_hihires_finedt");
   init_var("PARTICLESIZE1", (char*)&PARTICLESIZE1, REAL, NO, "0.1");
   init_var("PERIODICY", (char*)&PERIODICY, BOOL, NO, "0");
   init_var("PERIODICZ", (char*)&PERIODICZ, BOOL, NO, "0");
