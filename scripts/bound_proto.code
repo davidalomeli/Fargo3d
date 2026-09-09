@@ -14,19 +14,3 @@ ex void boundary_zmax_0_cpu(void);
 ex void boundary_zmin_0_gpu(void);
 ex void boundary_zmax_0_gpu(void);
 #endif
-#ifdef Y
-ex void boundary_ymin_1_cpu(void);
-ex void boundary_ymax_1_cpu(void);
-#endif
-#ifdef Y
-ex void boundary_ymin_1_gpu(void);
-ex void boundary_ymax_1_gpu(void);
-#endif
-#ifdef Z
-ex void boundary_zmin_1_cpu(void);
-ex void boundary_zmax_1_cpu(void);
-#endif
-#ifdef Z
-ex void boundary_zmin_1_gpu(void);
-ex void boundary_zmax_1_gpu(void);
-#endif
