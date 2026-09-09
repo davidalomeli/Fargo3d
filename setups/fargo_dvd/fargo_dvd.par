@@ -37,7 +37,7 @@ IndirectTerm		yes
 ### Mesh parameters
 
 Nx			1		Number of azimuthal zones
-Ny               	1024	Number of Radial zones
+Ny               	2048	Number of Radial zones
 
 Xmin		       -3.14159265358979323844
 Xmax			3.14159265358979323844
@@ -57,4 +57,4 @@ DT			0.314159265359	Time step length
 Ninterm	 		100		Time steps between outputs
 Ntot			500		Total number of time steps
 
-OutputDir		/project/phys-k/fargo_share/fargo_gasdisk_alldamp_viscr_lowdamp_hires
+OutputDir		/project/phys-k/fargo_share/fargo_gasdisk_alldamp_viscr_lowdamp_hihires
