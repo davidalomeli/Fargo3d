@@ -41,7 +41,7 @@ void InitVariables() {
   init_var("OMEGAFRAME", (char*)&OMEGAFRAME, REAL, NO, "0.0");
   init_var("OORTA", (char*)&OORTA, REAL, NO, "-0.75");
   init_var("ORBITALRADIUS", (char*)&ORBITALRADIUS, REAL, NO, "0.0");
-  init_var("OUTPUTDIR", (char*)&OUTPUTDIR, STRING, NO, "/project/phys-k/fargo_share/fargo_gasdisk_alldamp_viscr_lowdamp_hihires_superfinedt_openinner_ghost");
+  init_var("OUTPUTDIR", (char*)&OUTPUTDIR, STRING, NO, "/project/phys-k/fargo_share/fargo_gasdisk_alldamp_viscr_middamp_hihires_superfinedt_openinner_ghost");
   init_var("PARTICLESIZE1", (char*)&PARTICLESIZE1, REAL, NO, "0.1");
   init_var("PERIODICY", (char*)&PERIODICY, BOOL, NO, "0");
   init_var("PERIODICZ", (char*)&PERIODICZ, BOOL, NO, "0");
@@ -60,7 +60,7 @@ void InitVariables() {
   init_var("SIGMA0", (char*)&SIGMA0, REAL, NO, "1.0e-4");
   init_var("SIGMASLOPE", (char*)&SIGMASLOPE, REAL, NO, "0.5");
   init_var("SPACING", (char*)&SPACING, STRING, NO, "Log");
-  init_var("TAUDAMP", (char*)&TAUDAMP, REAL, NO, "10.0");
+  init_var("TAUDAMP", (char*)&TAUDAMP, REAL, NO, "1.0");
   init_var("THICKNESSSMOOTHING", (char*)&THICKNESSSMOOTHING, REAL, NO, "0.1");
   init_var("VERTICALDAMPING", (char*)&VERTICALDAMPING, REAL, NO, "0.0");
   init_var("VMAX", (char*)&VMAX, REAL, NO, "1.0");

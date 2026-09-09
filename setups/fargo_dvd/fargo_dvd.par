@@ -10,7 +10,7 @@ FlaringIndex		0.0		Flare of the disk
 ALPHA                   1.0e-3
 DampingZone		2.0
 Spacing                 Log
-TauDamp                 10.0
+TauDamp                 1.0
 
 
 ### Dust parameters
@@ -57,4 +57,4 @@ DT                      0.06283185307179586476
 Ninterm	 		1		Time steps between outputs
 Ntot			25		Total number of time steps
 
-OutputDir		/project/phys-k/fargo_share/fargo_gasdisk_alldamp_viscr_lowdamp_hihires_superfinedt_openinner_ghost
+OutputDir		/project/phys-k/fargo_share/fargo_gasdisk_alldamp_viscr_middamp_hihires_superfinedt_openinner_ghost
