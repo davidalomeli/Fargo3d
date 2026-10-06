@@ -1,0 +1,48 @@
+
+
+===========================
+FARGO3D git version c94be9c7-dirty
+SETUP: 'dustydisk'
+===========================
+
+The default output directory root is ./
+The output directory is $TARGET_DIR/
+Process 0 created the directory $TARGET_DIR/
+I do not output the ghost values
+Process 0 created the directory $TARGET_DIR/
+Process 1 created the directory $TARGET_DIR/
+Process 0 could not open $TARGET_DIR//variables.par
+Tried to create $TARGET_DIR/
+Still could not open $TARGET_DIR//variables.par.
+You should check that the permissions are correctly set.
+Run aborted
+Process 2 created the directory $TARGET_DIR/
+Process 3 created the directory $TARGET_DIR/
+Process 4 created the directory $TARGET_DIR/
+Process 5 created the directory $TARGET_DIR/
+Process 6 created the directory $TARGET_DIR/
+Process 7 created the directory $TARGET_DIR/
+Process 8 created the directory $TARGET_DIR/
+Process 9 created the directory $TARGET_DIR/
+Process 10 created the directory $TARGET_DIR/
+Process 11 created the directory $TARGET_DIR/
+Process 12 created the directory $TARGET_DIR/
+Process 13 created the directory $TARGET_DIR/
+Process 14 created the directory $TARGET_DIR/
+Process 15 created the directory $TARGET_DIR/
+Process 16 created the directory $TARGET_DIR/
+Process 17 created the directory $TARGET_DIR/
+Process 18 created the directory $TARGET_DIR/
+Process 19 created the directory $TARGET_DIR/
+Process 20 created the directory $TARGET_DIR/
+Process 21 created the directory $TARGET_DIR/
+Process 22 created the directory $TARGET_DIR/
+Process 23 created the directory $TARGET_DIR/
+Process 24 created the directory $TARGET_DIR/
+Process 25 created the directory $TARGET_DIR/
+Process 26 created the directory $TARGET_DIR/
+Process 27 created the directory $TARGET_DIR/
+Process 28 created the directory $TARGET_DIR/
+Process 29 created the directory $TARGET_DIR/
+Process 30 created the directory $TARGET_DIR/
+Process 31 created the directory $TARGET_DIR/

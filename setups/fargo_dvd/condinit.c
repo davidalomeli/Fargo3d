@@ -83,7 +83,7 @@ void _CondInit() {
 void CondInit() {
   
   int id_gas = 0;
-  int feedback = NO;
+  int feedback = YES;
   //We first create the gaseous fluid and store it in the array Fluids[]
   Fluids[id_gas] = CreateFluid("gas",GAS);
 
@@ -110,17 +110,17 @@ void CondInit() {
    Note: ColRate() moves the collision matrix to the device.
    If feedback=NO, gas does not feel the drag force.*/
   
-//  ColRate(INVSTOKES1, id_gas, 1, feedback);
-//  ColRate(INVSTOKES2, id_gas, 2, feedback);
-//  ColRate(INVSTOKES3, id_gas, 3, feedback);
+  ColRate(INVSTOKES1, id_gas, 1, feedback);
+  ColRate(INVSTOKES2, id_gas, 2, feedback);
+  ColRate(INVSTOKES3, id_gas, 3, feedback);
 
-    #ifdef DUSTSIZE
-    real rhos = RHOSOLID/(MSTAR_CGS/(R0_CGS*R0_CGS*R0_CGS))*(MSTAR/(R0*R0*R0));
-    real size1 = PARTICLESIZE1*R0/R0_CGS;
-//    real size2 = PARTICLESIZE2*R0/R0_CGS;
-//    real size3 = PARTICLESIZE3*R0/R0_CGS;
-    ColRate((2./M_PI)/(size1*rhos), id_gas, 1, feedback);
-//    ColRate(sqrt(8./M_PI)/(size2*rhos), id_gas, 2, feedback);
-//    ColRate(sqrt(8./M_PI)/(size3*rhos), id_gas, 3, feedback);
-    #endif
+ //   #ifdef DUSTSIZE
+ //   real rhos = RHOSOLID/(MSTAR_CGS/(R0_CGS*R0_CGS*R0_CGS))*(MSTAR/(R0*R0*R0));
+ //   real size1 = PARTICLESIZE1*R0/R0_CGS;
+ //   real size2 = PARTICLESIZE2*R0/R0_CGS;
+ //   real size3 = PARTICLESIZE3*R0/R0_CGS;
+ //   ColRate((2./M_PI)/(size1*rhos), id_gas, 1, feedback);
+ //   ColRate(sqrt(8./M_PI)/(size2*rhos), id_gas, 2, feedback);
+ //   ColRate(sqrt(8./M_PI)/(size3*rhos), id_gas, 3, feedback);
+ //   #endif
 }

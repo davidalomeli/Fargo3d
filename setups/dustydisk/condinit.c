@@ -10,6 +10,11 @@ void _Init(int index) {
   real *cs     = Energy->field_cpu;
 
   real eta = 0.75*ASPECTRATIO*ASPECTRATIO;
+  //David added this
+//  real rhos = RHOSOLID/(MSTAR_CGS/(R0_CGS*R0_CGS*R0_CGS))*(MSTAR/(R0*R0*R0));
+//  real size1 = PARTICLESIZE1*R0/R0_CGS;
+//  real TS = size1*rhos/(2./M_PI);
+
   
   i = j = k = 0;
   
@@ -21,7 +26,7 @@ void _Init(int index) {
 
       if (index == 0) {
         sigma[l] = SIGMA0*pow(ymed(j)/R0,-0.5);
-        vr[l]    = 2*EPSILON*TS/(pow(TS,2) + pow(1+EPSILON,2))*eta*vkmin;
+        vr[l]    = 2*EPSILON*TS/(pow(TS,2) + pow(1+EPSILON,2))*eta*vkmin - 1.5*ALPHA*pow(ASPECTRATIO,2)*vkmin;
         vphi[l]  = vkmed;
         vphi[l] -= (pow(TS,2) + 1 + EPSILON)/(pow(TS,2)+pow(1+EPSILON,2))*eta*vkmed;
         cs[l]    = vkmed*ASPECTRATIO;
@@ -50,4 +55,10 @@ void CondInit() {
      
    ColRate(1.0/TS, 0, 1, YES); //Fill the collision matrix with the
                                //inverse of the Stokes Number
+   // David added this
+   #ifdef DUSTSIZE
+    real rhos = RHOSOLID/(MSTAR_CGS/(R0_CGS*R0_CGS*R0_CGS))*(MSTAR/(R0*R0*R0));
+    real size1 = PARTICLESIZE1*R0/R0_CGS;
+    ColRate((2./M_PI)/(size1*rhos), 0, 1, NO);
+   #endif
 }

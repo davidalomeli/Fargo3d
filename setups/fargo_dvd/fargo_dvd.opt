@@ -12,8 +12,8 @@
 # If you need N-fluids, write: FLUIDS := 0 1 2 ... N-1
 # (replace "..." with a complete list) and NFLUIDS = N
 
-FLUIDS := 0
-NFLUIDS = 1
+FLUIDS := 0 1 2 3
+NFLUIDS = 4
 
 FARGO_OPT += -DNFLUIDS=${NFLUIDS}
 #-----------------------------------------------------------
@@ -27,7 +27,7 @@ FARGO_OPT +=  -DY
 
 FARGO_OPT += -DACCMONITOR
 
-FARGO_OPT += -DWRITEGHOSTS
+#FARGO_OPT += -DWRITEGHOSTS
 
 #Equation of State
 FARGO_OPT +=  -DISOTHERMAL
@@ -37,18 +37,18 @@ FARGO_OPT +=  -DCYLINDRICAL
 
 FARGO_OPT += -DPOTENTIAL
 
-#FARGO_OPT += -DVISCOSITY
-FARGO_OPT += -DALPHAVISCOSITY
+FARGO_OPT += -DVISCOSITY
+#FARGO_OPT += -DALPHAVISCOSITY
 
 #Drag force between species
 FARGO_OPT += -DDRAGFORCE
 FARGO_OPT += -DSTOKESNUMBER
 #Use -DDUSTSIZE to use dust size
-FARGO_OPT += -DDUSTSIZE
+#FARGO_OPT += -DDUSTSIZE
 FARGO_OPT += -DDUSTDIFFUSION
 
 #Damping conditions
-#FARGO_OPT += -DSTOCKHOLM
+FARGO_OPT += -DSTOCKHOLM
 
 FARGO_OPT += -DLONGSUMMARY
 

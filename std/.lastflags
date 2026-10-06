@@ -1,5 +1,5 @@
 FULLDEBUG=0
-SETUP=fargo_dvd
+SETUP=dustydisk_restart
 PARALLEL=1
 BIGMEM=1
 RESCALE=0

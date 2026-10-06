@@ -87,8 +87,8 @@ OUTPUT(Vy);
 	density[lgh] = density[lact]*pow(ymed(jact)/ymed(jgh),0.5);
 	vx[lgh] = vx[lact]*pow(ymed(jact)/ymed(jgh),0.5);
 	if (j<size_y-1)
-		vy[lghs] = vy[lacts]*pow(ymed(jact)/ymed(jgh),0.5);
-	vy[lacts_null] = vy[lacts_null_mirror]*pow(ymed(jact)/ymed(jgh),0.5);
+		vy[lghs] = (vy[lacts]< 0.0 ? 0.0: vy[lacts]);
+	vy[lacts_null] = (vy[lacts_null_mirror]<0.0 ? 0.0: vy[lacts_null_mirror]);
 //<\#>
 #ifdef X
       }

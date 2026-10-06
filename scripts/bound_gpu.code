@@ -6,3 +6,11 @@ boundary_ymax[0] = boundary_ymax_0_gpu;
 boundary_zmin[0] = boundary_zmin_0_gpu;
 boundary_zmax[0] = boundary_zmax_0_gpu;
 #endif
+#ifdef Y
+boundary_ymin[1] = boundary_ymin_1_gpu;
+boundary_ymax[1] = boundary_ymax_1_gpu;
+#endif
+#ifdef Z
+boundary_zmin[1] = boundary_zmin_1_gpu;
+boundary_zmax[1] = boundary_zmax_1_gpu;
+#endif

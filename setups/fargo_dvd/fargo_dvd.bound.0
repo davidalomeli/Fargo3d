@@ -11,5 +11,5 @@ Vx:
 
 Vy:
 	Ymin: POWERLAW
-	Ymax: POWERLAW
+	Ymax: OPENOUTER
 
