@@ -17,6 +17,10 @@ void CflFluidsMin() {
 #endif
   if(StepTime <= SMALLTIME) {
     masterprint("Error!!!--> Null dt\n");
+    TimeStep = 99999;               // distinct number so it won't overwrite a real output
+    MULTIFLUID(WriteOutputs(ALL)); // same call main.c uses for regular outputs
+    masterprint("Output Before Crash\n");
+    MPI_Barrier(MPI_COMM_WORLD);
     prs_exit(1);
   }
 }

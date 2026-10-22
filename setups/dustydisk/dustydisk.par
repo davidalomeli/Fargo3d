@@ -28,9 +28,9 @@ Ts              0.01                    # Lower values imply a greater coupling
 
 # Output parameters
 DT              0.6283185307179586        # Time steo for fine-grain monitoring
-Ninterm         400000                         # Number of DT between hydro outputs
-Ntot            400000                     # Total number of DTs
-OutputDir       /project/phys-k/fargo_share/dustydisk_St0.01       # Output directory
+Ninterm         200000                         # Number of DT between hydro outputs
+Ntot            200000                     # Total number of DTs
+OutputDir       /project/phys-k/fargo_share/dustydisk_St0.01_1d       # Output directory
 
 # Buffer zone parameters (Only if -DSTOCKHOLM is enabled in accretion.opt)
 

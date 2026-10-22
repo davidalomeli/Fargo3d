@@ -14,6 +14,10 @@ fargo3d
 outputs/
 output/
 
+
+miniconda3/
+dlomeli*
+
 # Python
 __pycache__/
 *.pyc
@@ -36,7 +40,9 @@ running/
 /fargo_stokesdisk*
 /fargo_stretch
 /fargo_job*
-
+/dustydisk_*
+/gasdisk_*
+gasdisk
 # Simulation/run directories
 errors/
 running/

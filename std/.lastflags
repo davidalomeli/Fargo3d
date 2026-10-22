@@ -1,5 +1,5 @@
 FULLDEBUG=0
-SETUP=dustydisk_restart
+SETUP=dustydisk
 PARALLEL=1
 BIGMEM=1
 RESCALE=0

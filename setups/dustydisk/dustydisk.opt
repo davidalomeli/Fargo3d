@@ -4,7 +4,7 @@
 # END
 #---------------------------------------------------------------
 
-FLUIDS := 0 1 
+FLUIDS := 0 1
 NFLUIDS = 2
 FARGO_OPT += -DNFLUIDS=${NFLUIDS}
 
@@ -39,7 +39,7 @@ FARGO_OPT += -DPOTENTIAL
 #Buffer zones before applying boundaries
 FARGO_OPT += -DSTOCKHOLM
 
-
+FARGO_OPT += -DFLOOR
 
 #Cuda blocks
 ifeq (${GPU}, 1)

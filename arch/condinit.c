@@ -59,6 +59,6 @@ void CondInit() {
    #ifdef DUSTSIZE
     real rhos = RHOSOLID/(MSTAR_CGS/(R0_CGS*R0_CGS*R0_CGS))*(MSTAR/(R0*R0*R0));
     real size1 = PARTICLESIZE1*R0/R0_CGS;
-    ColRate((2./M_PI)/(size1*rhos), 0, 1, YES);
+    ColRate((2./M_PI)/(size1*rhos), 0, 1, NO);
    #endif
 }

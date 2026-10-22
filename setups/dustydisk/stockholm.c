@@ -130,9 +130,9 @@ void StockholmBoundary_cpu(real dt) {
 	rampz = 0.0;
 	rampzz = 0.0;
 #ifdef Y
-	if(ymed(j) > Y_sup) {
-	  rampy   = (ymed(j)-Y_sup)/(y_max-Y_sup);
-	}
+//	if(ymed(j) > Y_sup) {
+//	  rampy   = (ymed(j)-Y_sup)/(y_max-Y_sup);
+//	}
 	if(ymed(j) < Y_inf) {
 	  rampy   = (Y_inf-ymed(j))/(Y_inf-y_min);
 	}
